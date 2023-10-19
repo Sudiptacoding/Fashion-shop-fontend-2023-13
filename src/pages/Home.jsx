@@ -47,12 +47,12 @@ const Home = () => {
                 <BrandLogoSlide></BrandLogoSlide>
             </div>
 
-            <div id='findmore' className='py-20 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 2xl:px-[300px] px-10'>
+            <div id='findmore' className='grid w-full grid-cols-1 gap-5 px-5 py-20 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:w-3/4'>
                 {
                     card?.map((item) => {
                         return <Link key={item._id} to={`/brandmoredata/${item?.select}`} className="relative overflow-hidden">
                             <div className="relative group">
-                                <img src={item?.image} alt="Image" className="w-full h-[400px] transform transition-transform duration-300 group-hover:scale-110" />
+                                <img src={item?.image} alt="Image" className="w-full h-[250px] transform transition-transform duration-300 group-hover:scale-110" />
                                 <div className="absolute inset-0 flex items-end justify-start transition-opacity duration-300 bg-opacity-50 opacity-0 card-bg group-hover:opacity-100">
                                     <div className='pb-6 pl-4'>
                                         <h1 className='pb-3 text-4xl font-bold text-white'>{item?.select}</h1>
