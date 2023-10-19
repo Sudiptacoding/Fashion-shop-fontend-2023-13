@@ -13,7 +13,6 @@ const Header = () => {
                 swal("Opps!", "Somethings rong!", "error");
             });
     }
-
     const navLink = <>
         <NavLink
             className={({ isActive, isPending }) =>
