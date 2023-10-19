@@ -9,7 +9,8 @@ import { UserProvider } from '../context/Usercontext';
 
 const SameBrandRelatedData = () => {
     const { currentUser } = useContext(UserProvider)
-    const allProductData = useLoaderData()
+    const productData = useLoaderData()
+    const allProductData = productData.slice(1)
     const location = useLocation()
 
     return (
@@ -18,7 +19,7 @@ const SameBrandRelatedData = () => {
             <div className='h-auto card-bg-more'>
                 <Header></Header>
                 {
-                    currentUser && <div className='flex items-center justify-center py-16  '><h1 className='font-bold text-white text-2xl'>Welcome to sudipta biswas</h1></div>
+                    currentUser && <div className='flex items-center justify-center py-16 '><h1 className='text-2xl font-bold text-white'>Welcome to sudipta biswas</h1></div>
                 }
                 <Zoom scale={1.4}>
                     {allProductData?.map((item) => {

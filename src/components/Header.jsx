@@ -42,7 +42,7 @@ const Header = () => {
                         {navLink}
                     </ul>
                 </div>
-                <a className="text-xl normal-case btn btn-ghost"><img className='w-6 lg:w-10' src="https://i.postimg.cc/y60Mpp1P/Feation-3-removebg-preview-1.png" alt="" /><span className='text-lg text-white'>Fashion Shop</span></a>
+                <Link to='/' className="text-xl normal-case btn btn-ghost"><img className='w-6 lg:w-10' src="https://i.postimg.cc/y60Mpp1P/Feation-3-removebg-preview-1.png" alt="" /><span className='text-lg text-white'>Fashion Shop</span></Link>
             </div>
             <div className="hidden navbar-center lg:flex">
                 <ul className="px-1 menu menu-horizontal">
@@ -70,7 +70,7 @@ const Header = () => {
                             </ul>
                         </div>
 
-                    </div> : <div> <Link to='/login' className="btn bg-transparent text-white border-none hover:text-black">Login</Link></div>
+                    </div> : <div> <Link to='/login' className="text-white bg-transparent border-none btn hover:text-black">Login</Link></div>
                 }
 
             </div>

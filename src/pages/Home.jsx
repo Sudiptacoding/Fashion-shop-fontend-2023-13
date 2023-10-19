@@ -10,11 +10,11 @@ const Home = () => {
     const [allItem, setAllItem] = useState([])
     const [seeall, setSeeAll] = useState(true)
 
+
     useEffect(() => {
         fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/item')
             .then((response) => response.json())
             .then((json) => {
-                setAllItem(json)
                 const brand = json.map(item => item.select)
                 const uniqueValues = [...new Set(brand)];
                 const newArr = []
@@ -23,8 +23,9 @@ const Home = () => {
                     newArr.push(matchdata)
                 }
                 setCard(newArr)
+                const newArray = json.filter(item => !newArr.includes(item))
+                setAllItem(newArray)
             });
-
     }, [])
 
     return (
@@ -54,7 +55,7 @@ const Home = () => {
                                 <img src={item?.image} alt="Image" className="w-full h-[400px] transform transition-transform duration-300 group-hover:scale-110" />
                                 <div className="absolute inset-0 flex items-end justify-start transition-opacity duration-300 bg-opacity-50 opacity-0 card-bg group-hover:opacity-100">
                                     <div className='pb-6 pl-4'>
-                                        <h1 className='pb-3 text-2xl font-bold text-white'>{item?.name}</h1>
+                                        <h1 className='pb-3 text-4xl font-bold text-white'>{item?.select}</h1>
                                         <button className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
                                     </div>
                                 </div>
