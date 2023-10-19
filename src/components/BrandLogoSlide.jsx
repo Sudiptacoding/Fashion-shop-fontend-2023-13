@@ -59,7 +59,6 @@ const BrandLogoSlide = () => {
             <div className='p-2'>
                 <img className='w-full h-[70px]' src="https://i.postimg.cc/bJNZNtss/download-2.png" alt="" />
             </div>
-
         </Slider>
     );
 };
