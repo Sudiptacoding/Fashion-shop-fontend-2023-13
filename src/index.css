@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.Rancho {
+    font-family: 'Rancho', cursive;
+}
+
+.banner-bg {
+    background: linear-gradient(180deg, #0727344d 20%, #166793 100%), url('https://images.pexels.com/photos/3366108/pexels-photo-3366108.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
+
+.form-bg {
+    background: linear-gradient(66deg, #000000 20%, #165e85 139%);
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
+
+.card-bg {
+    background: linear-gradient(178deg, #14354a, #031e2d9c);
+}
+
+.card-bg-more {
+    background: linear-gradient(178deg, #14354a, #031e2dd3);
+}
+
+.section-bg {
+    background: linear-gradient(180deg, #0727344d 20%, #166793 100%), url('https://images.pexels.com/photos/2036646/pexels-photo-2036646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: #FFFFFF;
+}
