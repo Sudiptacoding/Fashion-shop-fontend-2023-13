@@ -12,7 +12,6 @@ import PrivetRoute from "../privetroute/PrivetRoute";
 import MyCard from "../pages/MyCard";
 
 
-
 const router = createBrowserRouter([
     {
         path: "/",
