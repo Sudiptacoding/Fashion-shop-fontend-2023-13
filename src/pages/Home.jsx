@@ -28,7 +28,6 @@ const Home = () => {
             });
     }, [])
 
-
     const toggleThem = () => {
         document.documentElement.classList.toggle('dark')
     }
