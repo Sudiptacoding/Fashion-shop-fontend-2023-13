@@ -1,17 +1,3 @@
-// import React, { useContext } from 'react';
-// import UserContext, { UserProvider } from '../context/UserContext';
-
-// const Registration = () => {
-//     const { signup } = useContext(UserProvider)
-//     console.log(signup)
-//     return (
-
-//     );
-// };
-
-// export default Registration;
-
-
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
@@ -68,7 +54,6 @@ const Registration = () => {
                 swal("Opps!", "User alrady created. please add new email!", "error");
 
             })
-
     }
 
     const googleSignIn = () => {
@@ -80,7 +65,6 @@ const Registration = () => {
                 swal("Opps!", "Password not match!", "error");
             })
     }
-
 
     return (
         <div>

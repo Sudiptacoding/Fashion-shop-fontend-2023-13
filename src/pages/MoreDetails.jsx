@@ -29,33 +29,33 @@ const MoreDetails = () => {
     return (
         <div>
             <div className="bg-gray-100 dark:bg-gray-800">
-                <div className=" 2xl:w-3/4 mx-auto 2xl:h-screen h-auto flex items-center justify-center p-10 w-full">
-                    <div className="flex flex-col md:flex-row -mx-4 items-center">
+                <div className="flex items-center justify-center w-full h-auto p-10 mx-auto  2xl:w-3/4 2xl:h-screen">
+                    <div className="flex flex-col items-center -mx-4 md:flex-row">
                         <div className="md:flex-1 lg:px-4">
                             <div className="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
-                                <img className="w-full h-full object-cover" src={data?.image} alt="Product Image" />
+                                <img className="object-cover w-full h-full" src={data?.image} alt="Product Image" />
                             </div>
-                            <div className="flex -mx-2 mb-4">
+                            <div className="flex mb-4 -mx-2">
                                 <div className="w-1/2 px-2">
-                                    <button onClick={() => handelAddCard(data)} className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
+                                    <button onClick={() => handelAddCard(data)} className="w-full px-4 py-2 font-bold text-white bg-gray-900 rounded-full dark:bg-gray-600 hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
                                 </div>
                                 <div className="w-1/2 px-2">
-                                    <Link to='/'><button className="w-full bg-gray-400 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Go to home</button></Link>
+                                    <Link to='/'><button className="w-full px-4 py-2 font-bold text-gray-800 bg-gray-400 rounded-full dark:bg-gray-700 dark:text-white hover:bg-gray-300 dark:hover:bg-gray-600">Go to home</button></Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="md:flex-1 px-4">
-                            <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Product Name</h2>
-                            <p className="text-gray-600 dark:text-gray-300 text-xl mb-4">
+                        <div className="px-4 md:flex-1">
+                            <h2 className="mb-2 text-2xl font-bold text-gray-800 dark:text-white">Product Name</h2>
+                            <p className="mb-4 text-xl text-gray-600 dark:text-gray-300">
                                 {data?.name}
                             </p>
-                            <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Brand Name</h2>
-                            <p className="text-gray-600 dark:text-gray-300 text-md mb-4">
+                            <h2 className="mb-2 text-xl font-bold text-gray-800 dark:text-white">Brand Name</h2>
+                            <p className="mb-4 text-gray-600 dark:text-gray-300 text-md">
                                 {data?.select}
                             </p>
                             <div className="flex mb-4">
                                 <div className="mr-4">
-                                    <span className="font-bold text-xl text-gray-700 dark:text-gray-300">Price:</span>
+                                    <span className="text-xl font-bold text-gray-700 dark:text-gray-300">Price:</span>
                                     <span className="text-gray-600 dark:text-gray-300"> $ {data?.price}</span>
                                 </div>
                                 <div>
@@ -72,15 +72,13 @@ const MoreDetails = () => {
                                 />
                                 <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{data?.rating}</span>
                             </div>
-                            <h2 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Product type</h2>
-                            <p className="text-gray-600 dark:text-gray-300 text-md mb-4">
+                            <h2 className="mb-2 text-xl font-bold text-gray-800 dark:text-white">Product type</h2>
+                            <p className="mb-4 text-gray-600 dark:text-gray-300 text-md">
                                 {data?.type}
                             </p>
-
-
                             <div>
-                                <span className="font-bold text-xl text-gray-700 dark:text-gray-300">Product Description:</span>
-                                <p className="text-gray-600 dark:text-gray-300 text-xl mt-2">
+                                <span className="text-xl font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
+                                <p className="mt-2 text-xl text-gray-600 dark:text-gray-300">
                                     {data?.discription}
                                 </p>
                             </div>
