@@ -7,7 +7,6 @@ import { GoogleAuthProvider } from "firebase/auth";
 const provider = new GoogleAuthProvider();
 
 const UserContext = ({ children }) => {
-
     const [firstShow, setFirstShow] = useState('')
     const [currentUser, setCurrentUser] = useState(null)
     const [speener, seeSpeener] = useState(true)
@@ -43,8 +42,6 @@ const UserContext = ({ children }) => {
         }
     }, [])
 
-
-
     const sendValue = {
         currentUser,
         // first imag
@@ -58,8 +55,6 @@ const UserContext = ({ children }) => {
         googleLogIn,
         // logout
         logOut,
-
-
         // speense
         speener
     }
