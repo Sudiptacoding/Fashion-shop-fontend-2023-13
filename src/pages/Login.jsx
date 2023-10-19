@@ -1,17 +1,3 @@
-// import React from 'react';
-
-// const Login = () => {
-
-//     return (
-//         <div>
-//             <h1>i am log in</h1>
-//         </div>
-//     );
-// };
-
-// export default Login;
-
-
 import React, { useContext, useState } from 'react';
 import Header from '../components/Header';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -21,7 +7,6 @@ import { FcGoogle } from "react-icons/fc";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 const Login = () => {
-
     const [see, setSee] = useState(true)
     const { loginguser, googleLogIn } = useContext(UserProvider)
 
@@ -52,9 +37,6 @@ const Login = () => {
                 swal("Opps!", "Password not match!", "error");
             })
     }
-
-
-
     return (
         <div>
             <div className='bg-black'>  <Header></Header></div>
