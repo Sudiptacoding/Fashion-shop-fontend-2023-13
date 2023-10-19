@@ -28,9 +28,14 @@ const Home = () => {
             });
     }, [])
 
+
+    const toggleThem = () => {
+        document.documentElement.classList.toggle('dark')
+    }
+
     return (
-        <div id='top' className='Lato'>
-            <div className='banner-bg'>
+        <div id='top' className='Lato dark:bg-[#0b1f2bd1] dark:text-white'>
+            <div className='banner-bg '>
                 <Header></Header>
                 <div className='flex items-center justify-center h-[70vh]'>
                     <div className='text-right'>
@@ -65,16 +70,16 @@ const Home = () => {
                 }
             </div>
 
-            <div className='2xl:px-[200px] bg-[#f5f7f9] md:px-20 px-5 lg:pt-10 lg:pb-20'>
+            <div className='2xl:px-[200px] bg-[#f5f7f9] dark:bg-black dark:text-white md:px-20 px-5 lg:pt-10 lg:pb-20'>
                 <div className='flex items-center justify-between py-5'><h1 className='text-lg font-bold text-black underline underline-offset-3'>Featured Products</h1><p onClick={() => setSeeAll(!seeall)} className='text-lg font-bold text-black cursor-pointer hover:underline'>{seeall ? 'See all Products' : 'View all Products'}</p></div>
                 <div id='card' className='grid grid-cols-1 gap-5 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2'>
                     {
                         allItem?.slice(!seeall ? (0) : (-10)).map((item) => {
                             return <Link to={`/moredetails/${item._id}`} key={item._id} className='p-5 transition duration-300 ease-in-out rounded-md cursor-pointer hover:shadow-lg'>
                                 <img className='h-[248px] w-full' src={item?.image} alt="" />
-                                <h2 className='pt-5 text-base font-bold text-black'>{item?.name}</h2>
-                                <p className='text-sm font-bold text-[#a2a3a5]'>{item?.type}</p>
-                                <p className='text-sm  text-[#a2a3a5]'>$ {item?.price}</p>
+                                <h2 className='pt-5 text-base font-bold text-black dark:text-white'>{item?.name}</h2>
+                                <p className='text-sm font-bold text-[#a2a3a5] dark:text-white'>{item?.type}</p>
+                                <p className='text-sm  text-[#a2a3a5] dark:text-white'>$ {item?.price}</p>
                                 <div className="flex">
                                     <StarRatings
                                         rating={parseFloat(item?.rating)}
@@ -104,6 +109,14 @@ const Home = () => {
                     <a title="Buy me a beer" onClick={() => (document.getElementById('top').scrollIntoView({ behavior: "smooth" }))} target="_blank" class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
                         <img class="object-cover object-center w-full h-full rounded-full" src="https://ps.w.org/scrollup-master/assets/icon-128x128.png?rev=1058878" />
                     </a>
+                </div>
+            </div>
+
+            <div class="flex items-end justify-end fixed top-1/4 right-0 mb-4 mr-4 z-10">
+                <div>
+                    <input onClick={toggleThem} data-hs-theme-switch class="relative w-[3.25rem] h-7 bg-black checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 border border-transparent ring-1 ring-transparent focus:border-slate-700 focus:ring-slate-700 focus:outline-none appearance-none
+before:inline-block before:w-6 before:h-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200
+after:absolute after:right-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:bg-[url('../svg/illustration/moon-stars.svg')] checked:after:bg-[url('../svg/illustration/brightness-high.svg')] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:left-1.5 checked:after:right-auto" type="checkbox" id="darkSwitch"></input>
                 </div>
             </div>
         </div>
