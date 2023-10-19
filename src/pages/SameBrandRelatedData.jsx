@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-
 import { Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
 import StarRatings from 'react-star-ratings';
@@ -107,16 +106,9 @@ const SameBrandRelatedData = () => {
                         })
                     }
                 </div>
-
-
-
             </div>
-
-
         );
     }
-
-
 };
 
 export default SameBrandRelatedData;
