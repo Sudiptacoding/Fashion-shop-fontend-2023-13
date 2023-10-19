@@ -10,7 +10,6 @@ const Home = () => {
     const [allItem, setAllItem] = useState([])
     const [seeall, setSeeAll] = useState(true)
 
-
     useEffect(() => {
         fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/item')
             .then((response) => response.json())
