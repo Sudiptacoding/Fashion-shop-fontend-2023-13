@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import BrandLogoSlide from '../components/BrandLogoSlide';
 import { Link } from 'react-router-dom';
-import StarRatings from 'react-star-ratings';
 import Footer from '../components/Footer';
 
 const Home = () => {
     const [card, setCard] = useState([])
-    const [allItem, setAllItem] = useState([])
-    const [seeall, setSeeAll] = useState(true)
+
 
     useEffect(() => {
         fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/item')
@@ -22,8 +20,6 @@ const Home = () => {
                     newArr.push(matchdata)
                 }
                 setCard(newArr)
-                const newArray = json.filter(item => !newArr.includes(item))
-                setAllItem(newArray)
             });
     }, [])
 
@@ -39,7 +35,7 @@ const Home = () => {
                     <div className='text-right'>
                         <h1 className='text-5xl Rancho'> Raining Offers For <br /> Hot Summer !</h1>
                         <p className='py-3 text-xl Lato'>25% Off On All Products</p>
-                        <button onClick={() => (document.getElementById('card').scrollIntoView({ behavior: "smooth" }))} className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
+                        <button className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
                         <button onClick={() => (document.getElementById('findmore').scrollIntoView({ behavior: "smooth" }))} className='px-4 py-2 text-sm font-bold text-white duration-150 bg-transparent border hover:bg-white hover:text-black hover:border-white'>FIND MORE</button>
                     </div>
                 </div>
@@ -68,39 +64,21 @@ const Home = () => {
                 }
             </div>
 
-            <div className='2xl:px-[200px] bg-[#f5f7f9] dark:bg-black dark:text-white md:px-20 px-5 lg:pt-10 lg:pb-20'>
-                <div className='flex items-center justify-between py-5'><h1 className='text-lg font-bold text-black underline underline-offset-3'>Featured Products</h1><p onClick={() => setSeeAll(!seeall)} className='text-lg font-bold text-black cursor-pointer hover:underline'>{seeall ? 'See all Products' : 'View all Products'}</p></div>
-                <div id='card' className='grid grid-cols-1 gap-5 xl:grid-cols-5 lg:grid-cols-3 md:grid-cols-2'>
-                    {
-                        allItem?.slice(!seeall ? (0) : (-10)).map((item) => {
-                            return <Link to={`/moredetails/${item._id}`} key={item._id} className='p-5 transition duration-300 ease-in-out rounded-md cursor-pointer hover:shadow-lg'>
-                                <img className='h-[248px] w-full' src={item?.image} alt="" />
-                                <h2 className='pt-5 text-base font-bold text-black dark:text-white'>{item?.name}</h2>
-                                <p className='text-sm font-bold text-[#a2a3a5] dark:text-white'>{item?.type}</p>
-                                <p className='text-sm  text-[#a2a3a5] dark:text-white'>$ {item?.price}</p>
-                                <div className="flex">
-                                    <StarRatings
-                                        rating={parseFloat(item?.rating)}
-                                        starDimension="15px"
-                                        starSpacing="1px"
-                                        starRatedColor="#ffa300"
-                                    />
-                                    <span className="ml-3 text-[#a2a3a5]">{item?.rating} Reviews</span>
-                                </div>
-                            </Link>
-                        })
-                    }
-                </div>
-            </div>
             <div className='section-bg'>
                 <div className='p-8 lg:p-32'>
                     <h4 className='text-xl font-bold text-white'>Limited Time Offer</h4>
                     <h1 className='text-[42px] font-extrabold text-white'>Special Edition</h1>
                     <p className='py-3 text-sm text-white '>Enjoy exclusive savings with our limited-time offer! Get a <br /> generous 25% discount on all our products</p>
                     <h4 className='pb-2 text-xl font-bold text-white'>Buy This Product At 20% Discount, Use Code OFF20</h4>
-                    <button onClick={() => (document.getElementById('card').scrollIntoView({ behavior: "smooth" }))} className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
+                    <button  className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
                 </div>
             </div>
+
+            <div className='w-full'>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d58884.19889386835!2d89.07047659999999!3d22.71848520000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1698218244684!5m2!1sen!2sbd" width='100%' height="450"></iframe>
+            </div>
+
+
             <div><Footer></Footer></div>
             <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
                 <div>
@@ -112,7 +90,7 @@ const Home = () => {
 
             <div class="flex items-end justify-end fixed top-1/4 right-0 mb-4 mr-4 z-10">
                 <div>
-                    <input onClick={toggleThem} data-hs-theme-switch class="relative w-[3.25rem] h-7 bg-black checked:bg-none checked:bg-blue-600 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 border border-transparent ring-1 ring-transparent focus:border-slate-700 focus:ring-slate-700 focus:outline-none appearance-none
+                    <input onClick={toggleThem} data-hs-theme-switch class="relative w-[3.25rem] h-7 bg-black checked:bg-none checked:bg-blue-600  rounded-full cursor-pointer transition-colors ease-in-out duration-200 border border-transparent ring-1 ring-transparent focus:border-slate-700 focus:ring-slate-700 focus:outline-none appearance-none
 before:inline-block before:w-6 before:h-6 before:bg-white checked:before:bg-blue-200 before:translate-x-0 checked:before:translate-x-full before:shadow before:rounded-full before:transform before:ring-0 before:transition before:ease-in-out before:duration-200
 after:absolute after:right-1.5 after:top-[calc(50%-0.40625rem)] after:w-[.8125rem] after:h-[.8125rem] after:bg-no-repeat after:bg-[right_center] after:bg-[length:.8125em_.8125em] after:bg-[url('../svg/illustration/moon-stars.svg')] checked:after:bg-[url('../svg/illustration/brightness-high.svg')] after:transform after:transition-all after:ease-in-out after:duration-200 after:opacity-70 checked:after:left-1.5 checked:after:right-auto" type="checkbox" id="darkSwitch"></input>
                 </div>
