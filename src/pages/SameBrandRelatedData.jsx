@@ -1,17 +1,14 @@
 import React, { useContext } from 'react';
 import { Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import StarRatings from 'react-star-ratings';
 import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import { UserProvider } from '../context/Usercontext';
 
 const SameBrandRelatedData = () => {
     const { currentUser } = useContext(UserProvider)
-    const productData = useLoaderData()
-    const allProductData = productData.slice(1)
+    const allProductData = useLoaderData()
     const location = useLocation()
-
     if (allProductData.length < 1) {
         return <div>
             <div className='bg-black'><Header></Header></div>
@@ -35,12 +32,7 @@ const SameBrandRelatedData = () => {
                                         <h2 className="text-sm tracking-widest text-white title-font">CATEGORY NAME</h2>
                                         <h1 className="mb-3 text-2xl font-medium text-white title-font">{item?.name}</h1>
                                         <div className="flex mb-4">
-                                            <StarRatings
-                                                rating={parseFloat(item?.rating)}
-                                                starDimension="25px"
-                                                starSpacing="6px"
-                                                starRatedColor="#ffa300"
-                                            />
+               
                                             <span className="ml-3 text-white">{item?.rating} Reviews</span>
                                         </div>
                                         <p className="leading-relaxed text-white">{item?.discription}</p>
@@ -81,13 +73,8 @@ const SameBrandRelatedData = () => {
                                             <h5 className="py-2 text-xl font-semibold tracking-tight text-gray-900 dark:text-white ">Brand : {item?.select}</h5>
                                         </a>
                                         <div className="flex items-center mt-2.5 mb-5">
-                                            <StarRatings
-                                                rating={parseFloat(item?.rating)}
-                                                starDimension="20px"
-                                                starSpacing="2px"
-                                                starRatedColor="#ffa300"
-                                            />
-                                            <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{item?.rating}</span>
+    
+                                            <span className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{item?.rating} star</span>
                                         </div>
                                         <div className='flex items-center gap-10 pb-5'>
                                             <a href="#">

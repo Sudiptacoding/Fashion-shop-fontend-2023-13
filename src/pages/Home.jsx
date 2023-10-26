@@ -9,18 +9,24 @@ const Home = () => {
 
 
     useEffect(() => {
-        fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/item')
-            .then((response) => response.json())
-            .then((json) => {
-                const brand = json.map(item => item.select)
-                const uniqueValues = [...new Set(brand)];
-                const newArr = []
-                for (const item of uniqueValues) {
-                    const matchdata = json.find(i => i.select === item)
-                    newArr.push(matchdata)
-                }
-                setCard(newArr)
-            });
+        // fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/item')
+        //     .then((response) => response.json())
+        //     .then((json) => {
+        //         const brand = json.map(item => item.select)
+        //         const uniqueValues = [...new Set(brand)];
+        //         const newArr = []
+        //         for (const item of uniqueValues) {
+        //             const matchdata = json.find(i => i.select === item)
+        //             newArr.push(matchdata)
+        //         }
+        //         setCard(newArr)
+        //     });
+
+        fetch('fakedata.json')
+            .then(res => res.json())
+            .then(data => setCard(data))
+
+
     }, [])
 
     const toggleThem = () => {
@@ -48,13 +54,13 @@ const Home = () => {
 
             <div id='findmore' className='grid w-full grid-cols-1 gap-5 px-5 py-20 mx-auto lg:grid-cols-3 md:grid-cols-2 lg:w-3/4'>
                 {
-                    card?.map((item) => {
-                        return <Link key={item._id} to={`/brandmoredata/${item?.select}`} className="relative overflow-hidden">
+                    card?.map((item, i) => {
+                        return <Link key={i} to={`/brandmoredata/${item?.name}`} className="relative overflow-hidden">
                             <div className="relative group">
-                                <img src={item?.image} alt="Image" className="w-full h-[250px] transform transition-transform duration-300 group-hover:scale-110" />
+                                <img src={item?.logo} alt="Image" className="w-full h-[250px] transform transition-transform duration-300 group-hover:scale-110" />
                                 <div className="absolute inset-0 flex items-end justify-start transition-opacity duration-300 bg-opacity-50 opacity-0 card-bg group-hover:opacity-100">
                                     <div className='pb-6 pl-4'>
-                                        <h1 className='pb-3 text-4xl font-bold text-white'>{item?.select}</h1>
+                                        <h1 className='pb-3 text-4xl font-bold text-white'>{item?.name}</h1>
                                         <button className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
                                     </div>
                                 </div>
@@ -70,7 +76,7 @@ const Home = () => {
                     <h1 className='text-[42px] font-extrabold text-white'>Special Edition</h1>
                     <p className='py-3 text-sm text-white '>Enjoy exclusive savings with our limited-time offer! Get a <br /> generous 25% discount on all our products</p>
                     <h4 className='pb-2 text-xl font-bold text-white'>Buy This Product At 20% Discount, Use Code OFF20</h4>
-                    <button  className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
+                    <button className='px-4 py-2 mr-3 text-sm font-bold text-black duration-150 bg-white border hover:bg-black hover:text-white hover:border-black ' >SHOP NOW</button>
                 </div>
             </div>
 
