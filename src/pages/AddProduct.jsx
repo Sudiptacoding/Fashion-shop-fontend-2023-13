@@ -23,7 +23,7 @@ const AddProduct = () => {
         const discription = e.target.discription.value;
 
         const data = { name, image, select, type, price, discription, rating }
-        fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/item', {
+        fetch('https://fashion-backend-rust.vercel.app/item', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

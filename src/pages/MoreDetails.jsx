@@ -10,7 +10,7 @@ const MoreDetails = () => {
     const navigate = useNavigate()
     const handelAddCard = (card) => {
         const data = { name: card.name, email: currentUser.email, discription: card.discription, image: card.image, price: card.price, rating: card.rating, select: card.select, type: card.type }
-        fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/card', {
+        fetch('https://fashion-backend-rust.vercel.app/card', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

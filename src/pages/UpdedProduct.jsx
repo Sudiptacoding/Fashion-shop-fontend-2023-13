@@ -26,7 +26,7 @@ const UpdedProduct = () => {
         const discription = e.target.discription.value;
         const updedData = { name, image, select, type, price, discription, rating }
 
-        fetch(`https://backend-etwzz54rd-sudiptacoding.vercel.app/item/${data._id}`, {
+        fetch(`https://fashion-backend-rust.vercel.app/item/${data._id}`, {
             method: 'PUT',
             body: JSON.stringify(updedData),
             headers: {

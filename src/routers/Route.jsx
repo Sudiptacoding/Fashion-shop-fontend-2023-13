@@ -41,17 +41,17 @@ const router = createBrowserRouter([
             {
                 path: "/brandmoredata/:id",
                 element: <PrivetRoute><SameBrandRelatedData></SameBrandRelatedData></PrivetRoute>,
-                loader: ({ params }) => fetch(`https://backend-etwzz54rd-sudiptacoding.vercel.app/item/${params.id}`)
+                loader: ({ params }) => fetch(`https://fashion-backend-rust.vercel.app/item/${params.id}`)
             },
             {
                 path: "/moredetails/:id",
                 element: <PrivetRoute><MoreDetails></MoreDetails></PrivetRoute>,
-                loader: ({ params }) => fetch(`https://backend-etwzz54rd-sudiptacoding.vercel.app/itemdetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://fashion-backend-rust.vercel.app/itemdetails/${params.id}`)
             },
             {
                 path: "/updeditem/:id",
                 element: <PrivetRoute><UpdedProduct></UpdedProduct></PrivetRoute>,
-                loader: ({ params }) => fetch(`https://backend-etwzz54rd-sudiptacoding.vercel.app/itemdetails/${params.id}`)
+                loader: ({ params }) => fetch(`https://fashion-backend-rust.vercel.app/itemdetails/${params.id}`)
             },
         ],
     },

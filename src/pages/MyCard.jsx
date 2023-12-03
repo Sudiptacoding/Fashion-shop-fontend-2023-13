@@ -10,7 +10,7 @@ const MyCard = () => {
     const [selectCard, setSelectCard] = useState([])
 
     useEffect(() => {
-        fetch(`https://backend-etwzz54rd-sudiptacoding.vercel.app/card/${currentUser?.email}`)
+        fetch(`https://fashion-backend-rust.vercel.app/card/${currentUser?.email}`)
             .then((response) => response.json())
             .then((json) => {
                 setSelectCard(json)
@@ -28,7 +28,7 @@ const MyCard = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://backend-etwzz54rd-sudiptacoding.vercel.app/card/${id}`, {
+                fetch(`https://fashion-backend-rust.vercel.app/card/${id}`, {
                     method: 'DELETE',
                 })
                     .then((response) => response.json())

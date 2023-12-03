@@ -9,7 +9,7 @@ const Home = () => {
 
 
     useEffect(() => {
-        // fetch('https://backend-etwzz54rd-sudiptacoding.vercel.app/item')
+        // fetch('https://fashion-backend-rust.vercel.app/item')
         //     .then((response) => response.json())
         //     .then((json) => {
         //         const brand = json.map(item => item.select)
